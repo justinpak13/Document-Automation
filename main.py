@@ -28,7 +28,7 @@ for table in doc.tables:
                 orig_text = cell.text
                 new_text = str.replace(orig_text, i, replacement_list[i])
                 cell.text = new_text
-                
+
 #save updated document
 doc.save("Test.docx")
 
