@@ -1,16 +1,15 @@
 import docx
 from datetime import datetime
 
-def create_document():
+def create_document(deal_name, specific_word, manager_name,date):
     doc = docx.Document('Important Document.docx')
 
     # In this example file only 4 replacements 
     replacement_list = {
-        "#Deal_Name": "new correct deal name",
-        "#some_specific_word": "The correct word",
-        "#manager_name": "Big Scary Manager Name",
-        "#date": "Todays Date",
-        "#another_specific_word":"another correct word"
+        "#Deal_Name": deal_name,
+        "#some_specific_word": specific_word,
+        "#manager_name": manager_name,
+        "#date": date,
     }
 
     # replace things in paragraphs 
@@ -33,7 +32,7 @@ def create_document():
 
     #save updated document
     time = datetime.now()
-    location =f"output/Test_{time.strftime('%m_%d_%Y_%H:%M:%S')}.docx"
+    location =f"output/Test_{time.strftime('%m-%d-%Y-%H-%M')}.docx"
     doc.save(location)
     return location
 
