@@ -1,0 +1,37 @@
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class=""alert alert-{{ category }}>
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<h1>Workpaper Automation</h1>
+<p class="blue-text">Enter information to fill out workpapers</p>
+<div class="card">
+    <div class=""content-section">
+        <form method="POST" action "">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend="border-bottom mb-4"> <b>Enter Information</b></legend>
+                <div class="form-group">
+                    {{ form.deal_name.label(class="form-control-label") }}
+                    {{ form.deal_name(class="form-control, form-control-lg") }}
+                </div>
+                <div class="form-group">
+                    {{ form.manager_name.label(class="form-control-label") }}
+                    {{ form.manager_name(class="form-control, form-control-lg") }}
+                </div>
+                <div class="form-group">
+                    {{ form.date.label(class="form-control-label") }}
+                    {{ form.date(class="form-control, form-control-lg") }}
+                </div>
+                <div="form-group">
+                    {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
